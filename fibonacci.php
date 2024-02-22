@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
 $fibonacci = 1;
 $counter = 0;
@@ -15,6 +11,3 @@ for ($i = 0; $i < 10; $i++){
 
 }
 ?>
-
-</body>
-</html>
