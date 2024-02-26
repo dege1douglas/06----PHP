@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Multa por Excesso de Peso de Peixes</title>
+</head>
+<body>
+
+<h2>Calculadora de Multa por Excesso de Peso de Peixes</h2>
+
+<form method="post" action="">
+    <label for="peso">Informe o peso total de peixes trazido (em kg):</label><br>
+    <input type="number" id="peso" name="peso" min="0" step="0.01" required><br>
+    
+    <input type="submit" value="Calcular Multa">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $peso = $_POST['peso'];
+
+    if ($peso > 50) {
+        $excesso = $peso - 50;
+
+        $multa = $excesso * 4;
+
+        echo "<p>Peso total de peixes trazido: $peso kg</p>";
+        echo "<p>Quantidade de quilos além do limite: $excesso kg</p>";
+        echo "<p>Valor da multa a ser paga: R$ $multa</p>";
+
+    } else {
+
+        echo "<p>Peso total de peixes trazido: $peso kg</p>";
+        echo "<p>Não há excesso de peso. Não precisa pagar multa.</p>";
+    }
+}
+?>
+
+</body>
+</html>

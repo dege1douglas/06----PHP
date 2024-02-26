@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informar Número</title>
+</head>
+<body>
+
+<form method="get" action="">
+    <label for="numero">Digite um número:</label><br>
+    <input type="text" id="numero" name="numero"><br>
+    <input type="submit" value="Enviar">
+</form>
+
+<?php
+if (isset($_GET['numero'])) {
+    $numero = $_GET['numero'];
+    echo "O número informado foi: $numero";
+} else {
+    echo "Por favor, informe um número.";
+}
+?>
+
+</body>
+</html>

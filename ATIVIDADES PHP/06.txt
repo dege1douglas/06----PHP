@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Área de Quadrado</title>
+</head>
+<body>
+
+<h2>Calculadora de Área de Quadrado</h2>
+
+<form method="post" action="">
+    <label for="lado">Informe o lado do quadrado:</label><br>
+    <input type="number" id="lado" name="lado" min="0" required><br>
+    
+    <input type="submit" value="Calcular Área">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $lado = $_POST['lado'];
+
+    $area = $lado * $lado;
+
+    $dobro_area = 2 * $area;
+
+    echo "<p>O dobro da área do quadrado é: $dobro_area</p>";
+}
+?>
+
+</body>
+</html>

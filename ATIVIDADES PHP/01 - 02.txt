@@ -1,0 +1,22 @@
+<?php
+//01
+$nome = "Douglas";
+$idade = "19";
+$escola = "PROZ";
+
+echo $nome." é aluno da escola ".$escola.", ele tem ".$idade." anos de idade.";
+
+//02
+/*
+- session_unset(): Remove todas as variáveis da sessão atual, mas mantém a sessão ativa. É útil para limpar os dados da sessão sem destruí-la, geralmente usado para fazer logout de um usuário ou limpar dados temporários.
+
+- mysql_query(): Era uma função usada para enviar consultas SQL para um banco de dados MySQL. Ela executava a consulta especificada e retornava um resultado que poderia ser usado posteriormente. No entanto, foi marcada como obsoleta no PHP 5.5.0 e removida no PHP 7.0.0 devido a preocupações de segurança e desempenho. É recomendado usar as extensões MySQLi ou PDO_MySQL para interagir com bancos de dados MySQL.
+
+- isset(): É uma função usada para verificar se uma variável foi definida e não é nula. Retorna true se a variável existir e tiver um valor diferente de null, e false caso contrário. É útil para evitar erros ao tentar acessar variáveis que não foram definidas.
+
+- include(): É usado para incluir e executar o conteúdo de um arquivo PHP durante a execução do script atual. Ele é útil para modularizar o código, permitindo a reutilização de código em vários arquivos. Se o arquivo incluído não for encontrado, ele gera um aviso (warning) e o script continua sua execução.
+
+- md5(): É uma função usada para calcular o hash MD5 de uma string. O hash MD5 é uma sequência de 32 caracteres hexadecimais que representa o hash da string original. É frequentemente usado para verificar a integridade de dados, mas seu uso para senhas é desencorajado devido a vulnerabilidades conhecidas.
+*/
+
+?>

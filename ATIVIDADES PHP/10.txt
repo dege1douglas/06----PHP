@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Peso Ideal</title>
+</head>
+<body>
+
+<h2>Calculadora de Peso Ideal</h2>
+
+<form method="post" action="">
+    <label for="altura">Informe a altura (em metros):</label><br>
+    <input type="number" id="altura" name="altura" min="0" step="0.01" required><br>
+    
+    <input type="submit" value="Calcular">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $altura = $_POST['altura'];
+
+    $peso_ideal = (72.7 * $altura) - 58;
+
+    echo "<p>O peso ideal para a altura de $altura metros é: $peso_ideal kg</p>";
+}
+?>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Salário</title>
+</head>
+<body>
+
+<h2>Calculadora de Salário</h2>
+
+<form method="post" action="">
+    <label for="valor_hora">Informe o valor do salário por hora (em R$):</label><br>
+    <input type="number" id="valor_hora" name="valor_hora" min="0" step="0.01" required><br>
+    
+    <label for="horas_mes">Informe o número de horas trabalhadas no mês:</label><br>
+    <input type="number" id="horas_mes" name="horas_mes" min="0" required><br>
+    
+    <input type="submit" value="Calcular Salário">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $valor_hora = $_POST['valor_hora'];
+    $horas_mes = $_POST['horas_mes'];
+
+    $salario_bruto = $valor_hora * $horas_mes;
+
+    $ir = $salario_bruto * 0.15;
+
+    $inss = $salario_bruto * 0.08;
+
+    $sindicato = $salario_bruto * 0.05;
+
+    $salario_liquido = $salario_bruto - $ir - $inss - $sindicato;
+
+    echo "<p>+ Salário Bruto: R$ $salario_bruto</p>";
+    echo "<p>- IR (15%): R$ $ir</p>";
+    echo "<p>- INSS (8%): R$ $inss</p>";
+    echo "<p>- Sindicato (5%): R$ $sindicato</p>";
+    echo "<p>= Salário Líquido: R$ $salario_liquido</p>";
+}
+?>
+
+</body>
+</html>

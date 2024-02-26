@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operações Matemáticas</title>
+</head>
+<body>
+
+<h2>Operações Matemáticas</h2>
+
+<form method="post" action="">
+    <label for="inteiro1">Informe o primeiro número inteiro:</label><br>
+    <input type="number" id="inteiro1" name="inteiro1" required><br>
+    
+    <label for="inteiro2">Informe o segundo número inteiro:</label><br>
+    <input type="number" id="inteiro2" name="inteiro2" required><br>
+    
+    <label for="real">Informe um número real:</label><br>
+    <input type="number" id="real" name="real" step="0.01" required><br>
+    
+    <input type="submit" value="Calcular">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $inteiro1 = $_POST['inteiro1'];
+    $inteiro2 = $_POST['inteiro2'];
+    $real = $_POST['real'];
+
+    $produto = (2 * $inteiro1) * ($inteiro2 / 2);
+    $soma = (3 * $inteiro1) + $real;
+    $cubo = pow($real, 3);
+
+    echo "<p>O produto do dobro do primeiro com metade do segundo é: $produto</p>";
+    echo "<p>A soma do triplo do primeiro com o terceiro é: $soma</p>";
+    echo "<p>O terceiro elevado ao cubo é: $cubo</p>";
+}
+?>
+
+</body>
+</html>

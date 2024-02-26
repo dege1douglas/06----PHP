@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Tinta para Pintura</title>
+</head>
+<body>
+
+<h2>Calculadora de Tinta para Pintura</h2>
+
+<form method="post" action="">
+    <label for="area">Informe a área a ser pintada (em metros quadrados):</label><br>
+    <input type="number" id="area" name="area" min="0" step="0.01" required><br>
+    
+    <input type="submit" value="Calcular">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $area = $_POST['area'];
+
+    $litros_tinta = $area / 3;
+
+    $quantidade_latas = ceil($litros_tinta / 18);
+
+    $preco_total = $quantidade_latas * 80;
+
+    echo "<p>Área a ser pintada: $area metros quadrados</p>";
+    echo "<p>Quantidade de latas de tinta necessárias: $quantidade_latas</p>";
+    echo "<p>Preço total: R$ $preco_total</p>";
+}
+?>
+
+</body>
+</html>

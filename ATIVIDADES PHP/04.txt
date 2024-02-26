@@ -1,0 +1,10 @@
+<?php
+//04
+$numero1 = 5;
+$numero2 = 3;
+
+$soma = $numero1 + $numero2;
+
+echo "A soma de $numero1 e $numero2 é igual a: $soma";
+
+?>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Salário Mensal</title>
+</head>
+<body>
+
+<h2>Calculadora de Salário Mensal</h2>
+
+<form method="post" action="">
+    <label for="valor_hora">Informe o valor da hora de trabalho:</label><br>
+    <input type="number" id="valor_hora" name="valor_hora" min="0" step="0.01" required><br>
+    
+    <label for="horas_mes">Informe o número de horas trabalhadas por mês:</label><br>
+    <input type="number" id="horas_mes" name="horas_mes" min="0" required><br>
+    
+    <input type="submit" value="Calcular Salário Mensal">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $valor_hora = $_POST['valor_hora'];
+    $horas_mes = $_POST['horas_mes'];
+
+    $salario_mensal = $valor_hora * $horas_mes;
+
+    echo "<p>O salário mensal é: R$ $salario_mensal</p>";
+}
+?>
+
+</body>
+</html>

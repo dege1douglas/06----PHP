@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Média</title>
+</head>
+<body>
+
+<h2>Calculadora de Média</h2>
+
+<form method="get" action="">
+    <label for="nota1">Nota 1:</label><br>
+    <input type="number" id="nota1" name="nota1" min="0" max="10" step="0.1" required><br>
+    
+    <label for="nota2">Nota 2:</label><br>
+    <input type="number" id="nota2" name="nota2" min="0" max="10" step="0.1" required><br>
+    
+    <label for="nota3">Nota 3:</label><br>
+    <input type="number" id="nota3" name="nota3" min="0" max="10" step="0.1" required><br>
+    
+    <input type="submit" value="Calcular Média">
+</form>
+
+<?php
+if (isset($_GET['nota1']) && isset($_GET['nota2']) && isset($_GET['nota3'])) {
+    // Obtendo as notas fornecidas pelo usuário
+    $nota1 = $_GET['nota1'];
+    $nota2 = $_GET['nota2'];
+    $nota3 = $_GET['nota3'];
+
+    // Calculando a média
+    $media = ($nota1 + $nota2 + $nota3) / 3;
+
+    // Exibindo o resultado
+    echo "<p>A média do aluno é: $media</p>";
+}
+?>
+
+</body>
+</html>
