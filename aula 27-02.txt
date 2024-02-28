@@ -1,0 +1,77 @@
+/DOUGLAS DA COSTA GOMES
+
+//01 - impares ate 500
+<?php
+$somaImpares = 0;
+for ($i = 0; $i < 500; $i++) {
+    if ($i % 2 != 0 && $i % 3 == 0) {
+        $somaImpares += $i; 
+    }
+}
+echo $somaImpares;
+?>
+
+//02 - maior e menor altura de 15 pessoas
+<?php
+$altura = array();
+for ($i = 0; $i < 15; $i++) {
+    array_push($altura, rand(145,210));
+}
+print_r($altura);
+$maior = max($altura);
+$menor = min($altura);
+echo "\nMAIOR: ".$maior." cm";
+echo "\nMENOR: ".$menor." cm";
+?>
+
+
+//03 - leia varios numeros e calcule a media dos valores lidos, qts positivos, qts negativos e percentual.
+<?php
+$contadorRandom = rand(2, 20);
+$valoresGerados = array();
+$positivos = 0;
+$negativos = 0;
+for ($i = 0; $i < $contadorRandom; $i++){
+    $valores = rand(-50,50);
+    array_push($valoresGerados, $valores);
+    if ($valores > 0){
+        $positivos++;
+    } else{
+        $negativos++;
+    }
+}
+$media = array_sum($valoresGerados)/$contadorRandom;
+$perPositivo = ceil($contadorRandom / $positivos);
+$perNegativo = ceil($contadorRandom / $negativos);
+
+print_r($valoresGerados);
+echo "\nQUANTIA DE VALORES: ".$contadorRandom;
+echo "POSITIVOS: ".$positivos."  - % => ".$perPositivo;
+echo "NEGATIVOS: ".$negativos."  - % => ".$perNegativo;
+echo "MEDIA: ".$media;
+?>
+
+//04 - x numeros [0-25] [26-50] [51-75] [76-100]
+<?php
+$contador = rand(0, 100);
+for ($i = 0; $i < $contador; $i++) {
+    $valores = rand(-1,100);
+    if ($valores < 26){
+        print("[0 - 25]<==$valores\n");
+    } elseif ($valores < 51 && $valores >= 26) {
+        print("[26 - 50]<==$valores \n");
+    } elseif ($valores < 76 && $valores >= 51) {
+        print("[51 - 75]<==$valores \n");   
+    } elseif ($valores < 101 && $valores >= 76) {
+        print("[76 - 100]<==$valores \n");
+    } elseif ($valores < 0){
+        print("BREAK<==$valores \n");
+        break;
+    }
+}
+?>
+
+//05 - x positivos qts pares qts impares, media pares, media geral, 0 encerra
+
+
+
