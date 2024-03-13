@@ -14,7 +14,7 @@ function calculadora($numA, $numB, $op) {
     }
 }
 
-$op = ["+","-","/","4"];
+$op = ["+","-","/","*"];
 $card = rand(0,4);
 $numb_rand = rand(-10,10);
 $numb_rand2 = rand(-10,10);
