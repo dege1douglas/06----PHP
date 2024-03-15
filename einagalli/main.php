@@ -121,22 +121,22 @@
 // matematica();
 
 //09
-// function vinteNumeros(){
-//     $numbers = explode(",", $_POST["numbers"]);
-//     $sumPositive = 0;
-//     $sumNegative = 0;
-//     foreach ($numbers as $number) {
-//         if ($number > 0) {
-//             $sumPositive += $number;
-//         } elseif ($number < 0) {
-//             $sumNegative += $number;
-//         }
-//     }
-//     echo "<h3>Resultados:</h3>";
-//     echo "Soma dos números positivos: $sumPositive <br>";
-//     echo "Soma dos números negativos: $sumNegative";
-// }
-// vinteNumeros();
+function vinteNumeros(){
+    $numbers = explode(",", $_POST["numbers"]);
+    $sumPositive = 0;
+    $sumNegative = 0;
+    foreach ($numbers as $number) {
+        if ($number > 0) {
+            $sumPositive += $number;
+        } elseif ($number < 0) {
+            $sumNegative += $number;
+        }
+    }
+    echo "<h3>Resultados:</h3>";
+    echo "Soma dos numeros positivos: $sumPositive <br>";
+    echo "Soma dos numeros negativos: $sumNegative";
+}
+vinteNumeros();
 
 //10
 // function casoVinte(){
